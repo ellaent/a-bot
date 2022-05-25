@@ -1,1 +1,12 @@
 TOKEN = '5349614495:AAHnwvFEJ6Oabu_hwJ6GW989PdY8OIuIEUU'
+
+DB_NAME = 'bot_db'
+DB_HOST = 'localhost'
+DB_USERNAME = 'postgres'
+DB_PASSWORD = '1234'
+
+OWM_TOKEN = '65ca0906a673f0c8e1ca2decad7f9396'
+
+HCTI_API_ENDPOINT = "https://hcti.io/v1/image"
+HCTI_API_USER_ID = 'ce448d87-ab31-489d-a476-2ef2b1f5eec9'
+HCTI_API_KEY = '6e9597e7-69f0-496d-a695-1ff550d1398b'

@@ -7,7 +7,7 @@ __pycache__/
 *.so
 
 #environment
-a-bot/config.py
+#a-bot/config.py
 
 # Distribution / packaging
 .Python
