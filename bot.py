@@ -709,7 +709,7 @@ async def forecast_location_new(message: types.Message, state: FSMContext):
 
 @dp.message_handler(commands=["test"])
 async def process_start_command(message: types.Message):
-    await message.answer(text="murmur!")
+    await message.answer(text="murmur ^3")
 
 
 if __name__ == "__main__":
