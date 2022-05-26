@@ -707,5 +707,10 @@ async def forecast_location_new(message: types.Message, state: FSMContext):
     await db.set_user_location(message.chat.id, location)
 
 
+@dp.message_handler(commands=["test"])
+async def process_start_command(message: types.Message):
+    await message.answer(text="murmur!")
+
+
 if __name__ == "__main__":
     executor.start_polling(dp)
