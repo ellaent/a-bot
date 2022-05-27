@@ -3,7 +3,6 @@ import logging
 import aiohttp
 import re
 from aiogram.utils.callback_data import CallbackData
-import aiofiles
 from aiogram import types
 
 from io import BytesIO
@@ -70,6 +69,7 @@ WEATHER_UNITS = {
 }
 
 metric_cb = CallbackData("change_metric", "city", "lat", "lon", "metric")
+details_cb = CallbackData("weather_details", "city", "lat", "lon")
 
 
 def lookup(s, lookups):
@@ -118,11 +118,6 @@ async def get_img_weather_url(city: str, weather: str, weather_id: str, metric: 
         return None
 
 
-async def save_image(path: str, image: memoryview) -> None:
-    async with aiofiles.open(path, "wb") as file:
-        await file.write(image)
-
-
 async def append_images(
     images, direction="horizontal", bg_color=(255, 255, 255), aligment="center"
 ):
@@ -139,9 +134,7 @@ async def append_images(
     if direction == "horizontal":
         new_width = sum(widths)
         new_height = max(heights)
-        if (
-            new_height * 2.5
-        ) < new_width:
+        if (new_height * 2.5) < new_width:
             new_height = round(new_width / 2.5)
     else:
         new_width = max(widths)
